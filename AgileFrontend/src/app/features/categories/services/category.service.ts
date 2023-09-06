@@ -13,6 +13,8 @@ export class CategoryService {
 
   addDefect(model:AddDefectRequest):Observable<void>{
     return this.http.post<void>('https://localhost:7179/api/Defect/AddDefect',model)
-
+  }
+  getDefect(developerId: String):Observable<any>{
+    return this.http.get<any>(`https://localhost:7179/api/Defect/${developerId}`)
   }
 }

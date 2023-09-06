@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './core/components/navbar/navbar.component';
 import { CategoryListComponent } from './features/categories/category-list/category-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DefectListComponent } from './features/categories/defect-list/defect-list.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     NewDefectComponent,
     NavbarComponent,
     CategoryListComponent,
+    DefectListComponent,
   
   ],
   imports: [

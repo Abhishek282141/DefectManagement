@@ -1,0 +1,40 @@
+<form (ngSubmit)="onLoad()" #defectForm="ngForm">
+    <div class="form-group">
+        <label for="developerId">Developer Id:</label>
+        <input type="text" id="developerId" name="developerId" class="form-control" [(ngModel)]="developerId" required>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!defectForm.valid">Submit</button>
+    <div>
+        <table class="table-bordered align-middle">
+            <thead>
+                <tr>
+                    <th>defectId</th>
+                    <th>title</th>
+                    <th>defectDetails</th>
+                    <th>stepsToReproduce</th>
+                    <th>priority</th>
+                    <th>reportedByTesterId</th>
+                    <th>assignedToDeveloperId</th>
+                    <th>severity</th>
+                    <th>status</th>
+                    <th>projectCode</th>
+                </tr>
+            </thead>
+            <tr *ngFor="let defect of responseData">
+
+                <td scope="row">{{ defect.defectId }}</td>
+                <td>{{ defect.title }}</td>
+                <td>{{ defect.defectDetails }}</td>
+                <td>{{ defect.stepsToReproduce }}</td>
+                <td>{{ defect.priority }}</td>
+                <td>{{ defect.reportedByTesterId }}</td>
+                <td>{{ defect.assignedToDeveloperId }}</td>
+                <td>{{ defect.severity }}</td>
+                <td>{{ defect.status }}</td>
+                <td>{{ defect.projectCode }}</td>
+
+            </tr>
+        </table>
+
+    </div>
+</form>
