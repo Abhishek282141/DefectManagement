@@ -1,0 +1,49 @@
+<form (ngSubmit)="onSubmit()" #defectForm="ngForm">
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" class="form-control" [(ngModel)]="model.title" required>
+    </div>
+    <div class="form-group">
+      <label for="defectDetails">Defect Details:</label>
+      <textarea id="defectDetails" name="defectDetails" class="form-control" [(ngModel)]="model.defectDetails" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="stepsToReproduce">Steps To Reproduce:</label>
+      <textarea id="stepsToReproduce" name="stepsToReproduce" class="form-control" [(ngModel)]="model.stepsToReproduce" required></textarea>
+    </div>
+    <div class="form-group">
+      <label>Priority:</label><br>
+      <input type="radio" name="priority" value="2" [(ngModel)]="model.priority" required> High
+      <input type="radio" name="priority" value="1" [(ngModel)]="model.priority"> Medium
+      <input type="radio" name="priority" value="0" [(ngModel)]="model.priority"> Low
+    </div>
+    <div class="form-group">
+      <label for="reportedByTesterId">Reported By Tester Id:</label>
+      <input type="text" id="reportedByTesterId" name="reportedByTesterId" class="form-control" [(ngModel)]="model.reportedByTesterId" required>
+    </div>
+    <div class="form-group">
+      <label for="assignedToDeveloperId">Given To Developer Id:</label>
+      <input type="text" id="assignedToDeveloperId" name="assignedToDeveloperId" class="form-control" [(ngModel)]="model.assignedToDeveloperId" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="severity">Severity:</label>
+      <select id="severity" name="severity" class="form-control" [(ngModel)]="model.severity" required>
+        <option value="3">Critical</option>
+        <option value="2">Major</option>
+        <option value="1">Minor</option>
+        <option value="0">Cosmetic</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="status">Status:</label>
+      <input type="text" id="status" name="status" class="form-control" [(ngModel)]="model.status" required>
+    </div>
+    <div class="form-group">
+      <label for="projectCode">Project Code:</label>
+      <input type="number" id="projectCode" name="projectCode" class="form-control" [(ngModel)]="model.projectCode" required>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!defectForm.valid">Submit</button>
+  </form>
+  
+
